@@ -1,0 +1,17 @@
+.parent {
+  color: blue;
+
+  /* 子要素をセレクトする */
+  & > .element {
+    color: purple;
+
+      /* 複数のクラスがついている要素をセレクトする */
+    &.second-child {
+      color: black;
+    }
+  }
+}
+
+.element {
+  color: red;
+}

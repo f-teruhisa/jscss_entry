@@ -1,0 +1,19 @@
+@charset "UTF-8";
+.parent {
+  color: blue;
+  /* 子要素をセレクトする */
+}
+
+.parent > .element {
+  color: purple;
+  /* 複数のクラスがついている要素をセレクトする */
+}
+
+.parent > .element.second-child {
+  color: black;
+}
+
+.element {
+  color: red;
+}
+/*# sourceMappingURL=style.css.map */
