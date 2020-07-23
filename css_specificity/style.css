@@ -1,0 +1,21 @@
+/* 詳細度: どれくらい細かくデザインが指定されているかの順で、親より子要素のほうが高く、classよりidの方が高い */
+.parent {
+  color: blue;
+  font-weight: 600;
+}
+
+span {
+  color: purple;
+}
+
+.cls {
+  color: orange;
+}
+
+#first {
+  color: magenta;
+}
+
+.parent span {
+  color: red;
+}

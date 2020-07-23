@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>Document</title>
+      <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+    <!-- 親要素が一番優先度が低い -->
+    <div class="parent">
+      <!-- タグの名前がその次に優先度が低い -->
+      <!-- クラス名がその次に優先度が低い -->
+      <!-- idが元も優先度が高い -->
+      <span class="cls">こんにちは！ 日本！</span>
+      <span id="first">こんにちは！ 日本！</span>
+      <span>こんにちは！ 日本！</span>
+      <span>こんにちは！ 日本！</span>
+    </div>
+  </body>
+
+</html>
