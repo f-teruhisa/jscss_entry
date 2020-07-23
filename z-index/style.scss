@@ -1,0 +1,50 @@
+#container {
+  padding: 1rem;
+  position: relative;
+  background-color: gray;
+}
+
+div {
+  font-weight: 600;
+  padding: 0.5rem;
+  font-size: 1.1em;
+  width: 150px;
+  height: 150px;
+  box-shadow: 7px 7px 0 0 #000;
+}
+
+// スタックコンテキスト: positionがstatic以外でかつ、z-indexが数値で設定されている状態
+.div-1 {
+  background: orange;
+  // absolute: 親要素でrelativeがついているものの左上からの絶対位置で要素を表示する
+  // fixed: ウィンドウの特定の位置に配置する(スクロールしても固定してついてくる)
+  position: absolute;
+  top: 0;
+  left: 0;
+  // 要素の順番を指定、大きいほうが前面に来る（positionはstatic以外）
+  // 設定していない場合、初期値はautoになる
+  z-index: 30;
+}
+.div-2 {
+  background: tomato;
+  position: relative;
+}
+.div-3 {
+  background: teal;
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  z-index: 50;
+  height: 8000px;
+}
+.div-4 {
+  width: 80px;
+  height: 80px;
+  background-color: violet;
+  // 親要素であるdiv3のz-indexの影響を受けるため、div1と2よりも前に出る
+  z-index: 10;
+  // top px数以上スクロールすると、親要素の中でスクロールに追随してくる
+  // 親要素にoverflow: hidden; が設定されていると動作しなくなる
+  position: sticky;
+  top: 30px;
+}
