@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+  </head>
+  <body>
+      <!-- spanはインライン要素。横並びにしたい場合はインライン要素にする。横幅と縦幅を設定できない。display: block; とするとブロック扱いになる。-->
+      <!-- インライン要素を右揃えにする場合はtext-align: right; -->
+      <span>こんにちは！ 日本！</span>
+      <!-- divはブロック要素。改行したいときはブロック要素にする。横幅と縦幅を設定できる。display: inline; とするとインライン扱いになる。 -->
+      <!-- ブロック要素を中央揃えにする場合はmargin: 0 auto; -->
+      <!-- ブロック要素とインライン要素を併せ持つinline-blockがあり、display: inline-block; とすることで可能。。 -->
+      <div>こんにちは！ 日本！</div>
+      <style>
+        div {
+          width: 300px;
+          height: 400px;
+          background-color: magenta;
+          margin: 0 auto;
+        }
+
+        span {
+          text-align: right;
+          width: 300px;
+          height: 400px;
+          background-color: magenta;
+        }
+      </style>
+  </body>
+</html>
