@@ -1,0 +1,36 @@
+/* Scssの変数設定 */
+$cWhite: white;
+$cBlack: black;
+
+#container {
+  text-align: center;
+}
+
+.btn {
+  background-color: $cWhite;
+  color: black;
+  border: 1px solid $cBlack;
+  /* 引数の順番は上から時計回り */
+  /* 上下と左右のペアが同じ場合は、引数を2つにし第1引数に上下、第2引数に左右を設定することが可能 */
+  padding: 10px 40px;
+  margin: 50px 0;
+  /* 100 ~ 900で100刻みの値を取る、500が普通の太さ */
+  font-weight: 600;
+  /* ホバーするとカーソルがポインターに変更される */
+  cursor: pointer;
+  /* 徐々にデザインを切り替える設定, 第3引数には緩急を設定できる, 第4引数には遅延時間を設定 */
+  transition: all 0.3s;
+
+  /* ホバーしたときのスタイルを設定 */
+  /* &は親要素がそのまま入るイメージ。この場合はbtn:hover。空白が入る場合以外は省略できない */
+  // &:hover {
+  //   background-color: $cBlack;
+  //   color: $cWhite;
+  // }
+
+  &.float {
+    &:hover {
+      box-shadow: 5px 5px 10px 0px rgba(0, 0, 0,0.5);
+    }
+  }
+}
