@@ -13,6 +13,7 @@ $cBlack: black;
     cursor: pointer;
     transition: all 0.3s;
     color: $cBlack;
+    // !importantは詳細度を無視して適用したいときに末尾につける（あとから上書きしづらくなるため、できれば使わないようにする）
     text-decoration: none !important;
 
     /* ここにボタンのスタイルを追加していこう */
