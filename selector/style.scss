@@ -1,0 +1,52 @@
+a {
+  color: orange;
+
+  &:visited {
+    color: blue;
+  }
+
+  &:hover {
+    color: red;
+  }
+
+  &:focus {
+    color: green;
+  }
+
+  &:active {
+    color: purple;
+  }
+}
+
+div {
+  & span {
+    color: olive;
+
+    //nth-childの3番めのものにのみスタイルを適用する
+    // 2ｎにすると、2の倍数つまり偶数個目の要素にスタイルを当てることができる
+    //oddで奇数、evenで偶数に割り当てることも可能
+    // &:nth-child(3) {
+    //   color: purple;
+    // }
+
+    // これが親要素であるspanに当てはまらない場合は、スキップされる
+    //:nth-of-type()とすると、子要素に当てはまったらスタイルが適用される
+    // :first-childで要素の最初、:last-childで要素の最後を直接指定することが可能
+    &:nth-child(1) {
+      color: purple;
+    }
+
+    &:nth-child(2) {
+      color: green;
+    }
+
+    &:nth-child(3) {
+      color: blue;
+    }
+
+    // 引数に当てはまらない要素にスタイルを適用する
+    &:not(.cls) {
+      color: purple;
+    }
+  }
+}
