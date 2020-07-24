@@ -1,11 +1,10 @@
 @charset "UTF-8";
 /* Scssの変数設定 */
 #container {
-  text-align: center;
-}
+  text-align: center; }
 
 .btn {
-  background-color: white;
+  background-color: gray;
   color: black;
   border: 1px solid black;
   /* 引数の順番は上から時計回り */
@@ -17,14 +16,14 @@
   /* ホバーするとカーソルがポインターに変更される */
   cursor: pointer;
   /* 徐々にデザインを切り替える設定, 第3引数には緩急を設定できる, 第4引数には遅延時間を設定 */
-  -webkit-transition: all 0.3s;
   transition: all 0.3s;
   /* ホバーしたときのスタイルを設定 */
-  /* &は親要素がそのまま入るイメージ。この場合はbtn:hover。空白が入る場合以外は省略できない */
-}
+  /* &は親要素がそのまま入るイメージ。この場合はbtn:hover。空白が入る場合以外は省略できない */ }
 
 .btn:hover {
   background-color: black;
-  color: white;
-}
+  color: white; }
+
+/*# sourceMappingURL=style.css.map */
+
 /*# sourceMappingURL=style.css.map */
