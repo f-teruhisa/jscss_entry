@@ -1,0 +1,108 @@
+@import 'mixin';
+
+img {
+  max-width: 100%;
+  // 上下余白がある場合に、その余白を詰める
+  vertical-align: bottom;
+}
+
+.cover-slide {
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    content: '';
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: orange;
+  }
+
+  &.inview {
+    &::after {
+      @include animation($name: kf-cover-slide, $duration: 1.6s, $timing-function: ease-in-out);
+    }
+  }
+}
+
+.img-zoom {
+  opacity: 0;
+
+  .inview & {
+    opacity: 1;
+    transition: transform 0.3 ease;
+    @include animation($name: kf-img-show, $duration: 1.6s, $timing-function: ease-in-out, $fill-mode: normal);
+
+    &:hover {
+      transform: scale(1.3);
+    }
+  }
+}
+
+@keyframes kf-cover-slide {
+  0% {
+    transform: scaleX(0);
+  }
+  50% {
+    transform: scaleX(1);
+  }
+  100% {
+    transform: scaleX(0);
+  }
+}
+
+@keyframes kf-img-show {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+
+  50.1% {
+    opacity: 1;
+    transform: scale(1.5);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.hover-darken {
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    transition: background-color 0.3s ease;
+    // マウスのイベントを無視するようになる
+    pointer-events: none;
+  }
+
+  &:hover::before {
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+}
+
+.bg-img-zoom {
+  background-image: url(images/image-1.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height:200px;
+  // クラスのスタイルを取り込む
+  @extend .img-zoom
+
+  &::before {
+    display: block;
+    content: '';
+
+  }
+}
