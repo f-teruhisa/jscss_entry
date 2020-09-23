@@ -1,0 +1,43 @@
+class ScrollObserver {
+  // スクロール監視クラス
+  constructor(els, cb, options) {
+    this.els = document.querySelectorAll('.animate-title');
+    const defaultOptions = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0,
+      once: true
+    };
+    // 後のoptions定義を上書きする
+    this.options = Object.assign(defaultOptions, options);
+    this.cb = cb;
+    this.once = this.options.once;
+    this._init();
+  }
+
+  _init() {
+    const callback = function(entries, observer) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // const ta = new TextAnimation(entry.target);
+          // ta.animate();
+          this.cb(entry.target, true);
+          if(this.once) {
+            observer.unobserve(entry.target);
+          }
+        } else {
+          this.cb(entry.target, false);
+        }
+      });
+    };
+
+    this.io = new IntersectionObserver(callback.bind(this), this.options);
+    this.io.POLL_INTERVAL = 100;
+    this.els.forEach(el => this.io.observe(el));
+  }
+
+  destroy() {
+    // 監視を止める
+    this.io.disconnect();
+  }
+}
