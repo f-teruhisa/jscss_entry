@@ -86,4 +86,3 @@ class Main {
         this.observers = new ScrollObserver('#main-content', this._sideAnimation.bind(this), {once: false, rootMargin: "-300px 0px"});
     }
 }
-
