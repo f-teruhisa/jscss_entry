@@ -17,7 +17,7 @@ $cMenuOpen: $cBlack;
         border: none;
         outline: none !important;
         cursor: pointer;
-    
+
         & > span {
             background-color: $cMenuClose;
             width: 35px;
@@ -25,7 +25,7 @@ $cMenuOpen: $cBlack;
             display: block;
             margin-bottom: 9px;
             transition: transform 0.7s;
-    
+
             &:last-child {
                 margin-bottom: 0;
             }
@@ -70,7 +70,7 @@ $cMenuOpen: $cBlack;
         transform: translate(-300px, 60px);
         box-shadow: 0 8px 40px -10px rgba(0, 0, 0, 0.8);
     }
-    
+
     & .mobile-menu {
         &__cover {
             opacity: 1;
@@ -89,7 +89,7 @@ $cMenuOpen: $cBlack;
         &__btn {
             & > span {
                 background-color: $cMenuOpen;
-    
+
                 &:nth-child(1) {
                     transition-delay: 70ms;
                     transform: translateY(11px) rotate(135deg);
